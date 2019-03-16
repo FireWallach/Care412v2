@@ -12,6 +12,7 @@ import java.net.URL;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -19,6 +20,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.TableView;
 import javafx.stage.Stage;
 
 /**
@@ -40,6 +42,7 @@ public class NavUIController implements Initializable {
     private Button personalbutton; //refers to the button for navigation to the personal page
     @FXML
     private Button medicalbutton; // refers to the button for navigation to the medical page
+    
 
     /**
      * Initializes the controller class.

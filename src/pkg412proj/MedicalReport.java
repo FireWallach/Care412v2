@@ -11,8 +11,14 @@ package pkg412proj;
  */
 public class MedicalReport {
     private String user;     //The user the report is on
-    private String testType; //Describes what's being tested for
+    private String test; //Describes what's being tested for
     private String result;   //Says what the result is
+    
+    public MedicalReport(String user, String testType, String result){
+        this.user = user;
+        this.test = testType;
+        this.result = result;
+    }
 
     /**
      * @return the user
@@ -32,14 +38,14 @@ public class MedicalReport {
      * @return the testType
      */
     public String getTestType() {
-        return testType;
+        return test;
     }
 
     /**
      * @param testType the testType to set
      */
     public void setTestType(String testType) {
-        this.testType = testType;
+        this.test = testType;
     }
 
     /**
