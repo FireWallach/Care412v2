@@ -17,7 +17,7 @@
         </columns>
       </TableView>
       <Button fx:id="backButton" layoutX="38.0" layoutY="350.0" mnemonicParsing="false" onAction="#goHome" text="Back" />
-      <Button fx:id="editButton" layoutX="524.0" layoutY="350.0" mnemonicParsing="false" onAction="#enableEditing" text="Edit" />
+      <Button fx:id="editButton" layoutX="515.0" layoutY="350.0" mnemonicParsing="false" onAction="#enableEditing" text="Expand" />
       <Text layoutX="165.0" layoutY="43.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Medical Tests Performed" textAlignment="CENTER" wrappingWidth="288.76953125">
          <font>
             <Font size="18.0" />

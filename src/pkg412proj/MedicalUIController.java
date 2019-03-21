@@ -59,7 +59,12 @@ public class MedicalUIController implements Initializable {
             observableReportList = FXCollections.observableArrayList();
         }
         observableReportList.clear();
-        System.out.println(MedicalReportList.get(0).getUser());
+        if(MedicalReportList.size() == 0){
+            MedicalReportList.add(new MedicalReport("User1","Leukemia", "Positive"));
+            MedicalReportList.add(new MedicalReport("User2","Tuberculosis", "Negative"));
+            MedicalReportList.add(new MedicalReport("User3","Anemeia", "Positive"));
+        }
+        
         for(int i = 0; i < MedicalReportList.size(); i++){
             this.observableReportList.add(MedicalReportList.get(i));
         }        
@@ -74,7 +79,25 @@ public class MedicalUIController implements Initializable {
     */
    
     public void enableEditing(){
-        //TODO: Write logic to edit medical information.
+        try{
+            MedicalReportList.setSelected(viewTable.getSelectionModel().getSelectedIndex());
+
+            URL url = null;
+            try {
+                url = new File("src/pkg412proj/MedicalDetailUI.fxml").toURI().toURL();
+            } catch (MalformedURLException ex) {
+                Logger.getLogger(NavUIController.class.getName()).log(Level.SEVERE, null, ex);
+            }
+
+            stage = (Stage)backButton.getScene().getWindow();
+            try{
+                root = FXMLLoader.load(url);
+            } catch(IOException ex){
+            }
+
+            NavigationManager.getInstance(stage).showScene(root);
+        } catch(Exception e){}
+        
     }
     
     public void goHome(){

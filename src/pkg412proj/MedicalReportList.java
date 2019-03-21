@@ -16,11 +16,14 @@ public class MedicalReportList {
     //This class is written as a blend of a singleton and a proxy to avoid the need of having to pass it through to every UI Controller as well as protect its integrity. 
     
     private static ArrayList<MedicalReport> list; //Data structure that contains Medical Reports
+    private static int selected; //stores currently focused data
     
     //Left empty as it's not needed and should not be called externally
     private MedicalReportList(){
         
     }
+    
+    
     
     //Does the standard Singleton initialization
     private static void verifyInitialized(){
@@ -63,6 +66,20 @@ public class MedicalReportList {
     public static ArrayList<MedicalReport> getList(){
         verifyInitialized();
         return list;
+    }
+
+    /**
+     * @return the selected
+     */
+    public static int getSelected() {
+        return selected;
+    }
+
+    /**
+     * @param aSelected the selected to set
+     */
+    public static void setSelected(int aSelected) {
+        selected = aSelected;
     }
     
 }
