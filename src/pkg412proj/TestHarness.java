@@ -37,7 +37,7 @@ public class TestHarness {
     }
     
     public void testGetUserList(){
-        UserList ul = new UserList();
+        UserList ul = UserList.getUserListCntl();
         if(ul.getUserList().isEmpty()){
             System.out.println("getUserList Passed.");
         } else{
@@ -47,7 +47,7 @@ public class TestHarness {
     
     public void testUserListAdd(){
         User user = new User("un", "pw", 0, "fname", "lname",0);
-        UserList ul = new UserList();
+        UserList ul = UserList.getUserListCntl();
         ul.add(user);
         if(ul.get(0).equals(user)){
             System.out.println("UserList::add Passed.");
@@ -56,7 +56,7 @@ public class TestHarness {
     
     public void testUserListGet(){
         User user = new User("getuser", "pw", 0, "fname", "lname",0);
-        UserList ul = new UserList();
+        UserList ul = UserList.getUserListCntl();
         ul.add(user);
         if(ul.get(0).equals(user)){
             System.out.println("UserList::get passed.");
@@ -67,7 +67,7 @@ public class TestHarness {
     public void testSetUserList(){
         
         User user = new User("un", "pw", 4, "fname", "lname",0);
-        UserList ul = new UserList();
+        UserList ul = UserList.getUserListCntl();
         ul.add(user);
         if(ul.get(0).equals(user)){
             System.out.println("setUserList passed.");

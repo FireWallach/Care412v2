@@ -7,13 +7,15 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pkg412proj.MedicalUIController">
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.161" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pkg412proj.MedicalUIController">
    <children>
       <TableView fx:id="viewTable" layoutX="58.0" layoutY="61.0" prefHeight="262.0" prefWidth="484.0">
         <columns>
-          <TableColumn fx:id="userColumn" prefWidth="155.0" text="User" />
-          <TableColumn fx:id="testColumn" prefWidth="178.0" text="Test" />
-            <TableColumn fx:id="resultColumn" prefWidth="150.0" text="Result" />
+          <TableColumn fx:id="userColumn" prefWidth="76.66665649414062" text="User" />
+          <TableColumn fx:id="testColumn" prefWidth="90.66668701171875" text="Test" />
+            <TableColumn fx:id="resultColumn" prefWidth="88.33331298828125" text="Result" />
+            <TableColumn fx:id="doctorColumn" prefWidth="146.33331298828125" text="Doctor" />
+            <TableColumn fx:id="roomColumn" prefWidth="82.0" text="Room" />
         </columns>
       </TableView>
       <Button fx:id="backButton" layoutX="38.0" layoutY="350.0" mnemonicParsing="false" onAction="#goHome" text="Back" />

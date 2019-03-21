@@ -48,6 +48,10 @@ public class MedicalUIController implements Initializable {
     private TableColumn<MedicalReport, String> testColumn;
     @FXML
     private TableColumn<MedicalReport, String> resultColumn;
+    @FXML
+    private TableColumn<MedicalReport, String> doctorColumn;
+    @FXML
+    private TableColumn<MedicalReport, String> roomColumn;
 
     /**
      * Initializes the controller class. Populates tables with mock data.
@@ -59,9 +63,9 @@ public class MedicalUIController implements Initializable {
         }
         observableReportList.clear();
         if (MedicalReportList.size() == 0) {
-            MedicalReportList.add(new MedicalReport("User1", "Leukemia", "Positive"));
-            MedicalReportList.add(new MedicalReport("User2", "Tuberculosis", "Negative"));
-            MedicalReportList.add(new MedicalReport("User3", "Anemeia", "Positive"));
+            MedicalReportList.add(new MedicalReport("User1", "Leukemia", "Positive", "Dr. Earnhardt", "Room 4"));
+            MedicalReportList.add(new MedicalReport("User2", "Tuberculosis", "Negative", "Dr. Ashwal", "Room 6"));
+            MedicalReportList.add(new MedicalReport("User3", "Anemeia", "Positive", "Dr. Gupta", "Room 3"));
         }
 
         for (int i = 0; i < MedicalReportList.size(); i++) {
@@ -70,6 +74,8 @@ public class MedicalUIController implements Initializable {
         userColumn.setCellValueFactory(new PropertyValueFactory<MedicalReport, String>("user"));
         testColumn.setCellValueFactory(new PropertyValueFactory<MedicalReport, String>("testType"));
         resultColumn.setCellValueFactory(new PropertyValueFactory<MedicalReport, String>("result"));
+        doctorColumn.setCellValueFactory(new PropertyValueFactory<MedicalReport, String>("doctor"));
+        roomColumn.setCellValueFactory(new PropertyValueFactory<MedicalReport, String> ("room"));
         viewTable.setItems(observableReportList);
     }
 
@@ -80,7 +86,7 @@ public class MedicalUIController implements Initializable {
         if (viewTable.getSelectionModel().getSelectedIndex() != -1) {
             MedicalReportList.setSelected(viewTable.getSelectionModel().getSelectedIndex());
         } else {
-            MedicalReportList.add(new MedicalReport("USER", "TEST TYPE", "RESULT"));
+            MedicalReportList.add(new MedicalReport("USER", "TEST TYPE", "RESULT", "DOCTOR", "ROOM"));
             MedicalReportList.setSelected(MedicalReportList.size() - 1);
         }
         URL url = null;

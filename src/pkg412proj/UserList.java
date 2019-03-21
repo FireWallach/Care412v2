@@ -13,16 +13,28 @@ import java.util.ArrayList;
 public class UserList {
     
     private ArrayList<User> userList; //Encapsulated ArrayList
+    private static UserList theUserList;
     
-    public UserList(){
+    private UserList(){
         userList = new ArrayList<User>();
+        userList.add(new User("admin", "password", 0, "", "", 0));
+        userList.add(new User("", "", 0 , "", "", 0));
+    }
+    
+    public static UserList getUserListCntl(){
+        if(theUserList != null){
+            return theUserList;
+        }else{
+            theUserList = new UserList();
+            return theUserList;
+        }
     }
 
     /**
      * @return the userList
      */
     public ArrayList<User> getUserList() {
-        return userList;
+        return theUserList.userList;
     }
 
     /**

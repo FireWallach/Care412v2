@@ -54,8 +54,8 @@ public class MedicalDetailUIController implements Initializable {
         nameField.setText(MedicalReportList.get(MedicalReportList.getSelected()).getUser());
         testField.setText(MedicalReportList.get(MedicalReportList.getSelected()).getTestType());
         resultField.setText(MedicalReportList.get(MedicalReportList.getSelected()).getResult());
-        doctorField.setText("Dr. Earnhardt"); //Hardcoded as this is a one-off demonstration of list-detail; Therefore I didn't see fit to reformat my models to then only revert them when development resumes. 
-        roomField.setText("Room 4");//Hardcoded as this is a one-off demonstration of list-detail; Therefore I didn't see fit to reformat my models to then only revert them when development resumes. 
+        doctorField.setText(MedicalReportList.get(MedicalReportList.getSelected()).getDoctor()); 
+        roomField.setText(MedicalReportList.get(MedicalReportList.getSelected()).getRoom());
     }    
 
     @FXML
@@ -83,6 +83,8 @@ public class MedicalDetailUIController implements Initializable {
         mr.setUser(nameField.getText());
         mr.setTestType(testField.getText());
         mr.setResult(resultField.getText());
+        mr.setDoctor(doctorField.getText());
+        mr.setRoom(roomField.getText());
     }
     
 }

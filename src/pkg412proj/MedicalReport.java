@@ -13,11 +13,15 @@ public class MedicalReport {
     private String user;     //The user the report is on
     private String test; //Describes what's being tested for
     private String result;   //Says what the result is
+    private String doctor; //Describes the doctor who entered the report
+    private String room; //Describes the room where the report was conducted
     
-    public MedicalReport(String user, String testType, String result){
+    public MedicalReport(String user, String testType, String result, String doctor, String room){
         this.user = user;
         this.test = testType;
         this.result = result;
+        this.doctor = doctor;
+        this.room = room;
     }
 
     /**
@@ -60,6 +64,34 @@ public class MedicalReport {
      */
     public void setResult(String result) {
         this.result = result;
+    }
+    
+    /**
+     * @return the doctor
+     */
+    public String getDoctor(){
+        return doctor;
+    }
+    
+    /**
+     * @param doctor the doctor to set
+     */
+    public void setDoctor(String doctor) {
+        this.doctor = doctor;
+    }
+    
+    /**
+     * @return the room
+     */
+    public String getRoom(){
+        return room;
+    }
+    
+    /**
+     * @param room the room to set
+     */
+    public void setRoom(String room) {
+        this.room = room;
     }
             
 }
