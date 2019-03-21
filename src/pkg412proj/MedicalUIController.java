@@ -31,7 +31,7 @@ import javafx.stage.Stage;
  * @author Dylan
  */
 public class MedicalUIController implements Initializable {
-    
+
     //The patients that a user has authorization to. If a patient is logged in, this will be one person.
     private ArrayList<User> patients; //Holds the patients
     private ArrayList<MedicalReport> reports; //Holds the reports
@@ -50,70 +50,69 @@ public class MedicalUIController implements Initializable {
     private TableColumn<MedicalReport, String> resultColumn;
 
     /**
-     * Initializes the controller class.
-     * Populates tables with mock data.
+     * Initializes the controller class. Populates tables with mock data.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        if(observableReportList == null){
+        if (observableReportList == null) {
             observableReportList = FXCollections.observableArrayList();
         }
         observableReportList.clear();
-        if(MedicalReportList.size() == 0){
-            MedicalReportList.add(new MedicalReport("User1","Leukemia", "Positive"));
-            MedicalReportList.add(new MedicalReport("User2","Tuberculosis", "Negative"));
-            MedicalReportList.add(new MedicalReport("User3","Anemeia", "Positive"));
+        if (MedicalReportList.size() == 0) {
+            MedicalReportList.add(new MedicalReport("User1", "Leukemia", "Positive"));
+            MedicalReportList.add(new MedicalReport("User2", "Tuberculosis", "Negative"));
+            MedicalReportList.add(new MedicalReport("User3", "Anemeia", "Positive"));
         }
-        
-        for(int i = 0; i < MedicalReportList.size(); i++){
+
+        for (int i = 0; i < MedicalReportList.size(); i++) {
             this.observableReportList.add(MedicalReportList.get(i));
-        }        
-        userColumn.setCellValueFactory(new PropertyValueFactory<MedicalReport,String>("user"));
-        testColumn.setCellValueFactory(new PropertyValueFactory<MedicalReport,String>("testType"));
-        resultColumn.setCellValueFactory(new PropertyValueFactory<MedicalReport,String>("result"));
+        }
+        userColumn.setCellValueFactory(new PropertyValueFactory<MedicalReport, String>("user"));
+        testColumn.setCellValueFactory(new PropertyValueFactory<MedicalReport, String>("testType"));
+        resultColumn.setCellValueFactory(new PropertyValueFactory<MedicalReport, String>("result"));
         viewTable.setItems(observableReportList);
-    }    
-    
+    }
+
     /*
     * Enables manual editing of Medical Record, if you have credentials
-    */
-   
-    public void enableEditing(){
-        try{
+     */
+    public void enableEditing() {
+        if (viewTable.getSelectionModel().getSelectedIndex() != -1) {
             MedicalReportList.setSelected(viewTable.getSelectionModel().getSelectedIndex());
+        } else {
+            MedicalReportList.add(new MedicalReport("USER", "TEST TYPE", "RESULT"));
+            MedicalReportList.setSelected(MedicalReportList.size() - 1);
+        }
+        URL url = null;
+        try {
+            url = new File("src/pkg412proj/MedicalDetailUI.fxml").toURI().toURL();
+        } catch (MalformedURLException ex) {
+            Logger.getLogger(NavUIController.class.getName()).log(Level.SEVERE, null, ex);
+        }
 
-            URL url = null;
-            try {
-                url = new File("src/pkg412proj/MedicalDetailUI.fxml").toURI().toURL();
-            } catch (MalformedURLException ex) {
-                Logger.getLogger(NavUIController.class.getName()).log(Level.SEVERE, null, ex);
-            }
+        stage = (Stage) backButton.getScene().getWindow();
+        try {
+            root = FXMLLoader.load(url);
+        } catch (IOException ex) {
+        }
 
-            stage = (Stage)backButton.getScene().getWindow();
-            try{
-                root = FXMLLoader.load(url);
-            } catch(IOException ex){
-            }
-
-            NavigationManager.getInstance(stage).showScene(root);
-        } catch(Exception e){}
-        
+        NavigationManager.getInstance(stage).showScene(root);
     }
-    
-    public void goHome(){
+
+    public void goHome() {
         URL url = null;
         try {
             url = new File("src/pkg412proj/NavUI.fxml").toURI().toURL();
         } catch (MalformedURLException ex) {
             Logger.getLogger(NavUIController.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
-        stage = (Stage)backButton.getScene().getWindow();
-        try{
+
+        stage = (Stage) backButton.getScene().getWindow();
+        try {
             root = FXMLLoader.load(url);
-        } catch(IOException ex){
+        } catch (IOException ex) {
         }
         NavigationManager.getInstance(stage).showScene(root);
     }
-    
+
 }

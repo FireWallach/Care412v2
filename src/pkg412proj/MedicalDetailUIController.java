@@ -19,6 +19,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 /**
@@ -33,32 +34,35 @@ public class MedicalDetailUIController implements Initializable {
     private Parent root;
     
     @FXML
-    private Label nameLabel;
-    @FXML
-    private Label testLabel;
-    @FXML
-    private Label resultLabel;
-    @FXML
-    private Label doctorLabel;
-    @FXML
-    private Label testRoomLabel;
-    @FXML
     private Button backButton;
+    @FXML
+    private TextField nameField;
+    @FXML
+    private TextField testField;
+    @FXML
+    private TextField resultField;
+    @FXML
+    private TextField doctorField;
+    @FXML
+    private TextField roomField;
 
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        nameLabel.setText(MedicalReportList.get(MedicalReportList.getSelected()).getUser());
-        testLabel.setText(MedicalReportList.get(MedicalReportList.getSelected()).getTestType());
-        resultLabel.setText(MedicalReportList.get(MedicalReportList.getSelected()).getResult());
-        doctorLabel.setText("Dr. Earnhardt"); //Hardcoded as this is a one-off demonstration of list-detail; Therefore I didn't see fit to reformat my models to then only revert them when development resumes. 
-        testRoomLabel.setText("Room 4");//Hardcoded as this is a one-off demonstration of list-detail; Therefore I didn't see fit to reformat my models to then only revert them when development resumes. 
+        nameField.setText(MedicalReportList.get(MedicalReportList.getSelected()).getUser());
+        testField.setText(MedicalReportList.get(MedicalReportList.getSelected()).getTestType());
+        resultField.setText(MedicalReportList.get(MedicalReportList.getSelected()).getResult());
+        doctorField.setText("Dr. Earnhardt"); //Hardcoded as this is a one-off demonstration of list-detail; Therefore I didn't see fit to reformat my models to then only revert them when development resumes. 
+        roomField.setText("Room 4");//Hardcoded as this is a one-off demonstration of list-detail; Therefore I didn't see fit to reformat my models to then only revert them when development resumes. 
     }    
 
     @FXML
     private void goBack(ActionEvent event) {
+        
+        saveFields();
+        
         URL url = null;
         try {
             url = new File("src/pkg412proj/MedicalUI.fxml").toURI().toURL();
@@ -72,6 +76,13 @@ public class MedicalDetailUIController implements Initializable {
         } catch(IOException ex){
         }
         NavigationManager.getInstance(stage).showScene(root);
+    }
+
+    private void saveFields() {
+        MedicalReport mr = MedicalReportList.get(MedicalReportList.getSelected());
+        mr.setUser(nameField.getText());
+        mr.setTestType(testField.getText());
+        mr.setResult(resultField.getText());
     }
     
 }
