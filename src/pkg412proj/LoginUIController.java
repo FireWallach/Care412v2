@@ -33,8 +33,6 @@ public class LoginUIController implements Initializable {
     private UserList ul; //List of users
     private Stage stage; // FXML required
     @FXML
-    private Button SubmitButton; //Submit button
-    @FXML
     private Label errorLabel; //Error Label
     private Parent root; //FXML Required
     private Scene scene; //FXML Required
