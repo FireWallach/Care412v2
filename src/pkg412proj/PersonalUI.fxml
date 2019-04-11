@@ -20,7 +20,7 @@
             <Font size="24.0" />
          </font>
       </Label>
-      <Button fx:id="payButton" layoutX="291.0" layoutY="327.0" mnemonicParsing="false" text="Pay" />
+      <Button fx:id="payButton" layoutX="291.0" layoutY="327.0" mnemonicParsing="false" onAction="#paymentButtonAction" text="Pay" />
       <Button fx:id="payAllButton" layoutX="455.0" layoutY="327.0" mnemonicParsing="false" text="Pay All" />
       <Button fx:id="backButton" layoutX="99.0" layoutY="327.0" mnemonicParsing="false" onAction="#goHome" text="Back" />
    </children>
