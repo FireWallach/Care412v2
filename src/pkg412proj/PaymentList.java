@@ -23,7 +23,8 @@ public class PaymentList {
         for(int i = 0; i < NUM_PAYMENTS; i++){
             int tempType = ThreadLocalRandom.current().nextInt(0, paymentTypes.length);
             double tempValue = ThreadLocalRandom.current().nextDouble(PAYMENT_MIN, PAYMENT_MAX);
-            paymentList.add(new Payment(paymentTypes[tempType], tempValue));
+            String tempValueString = Double.toString(tempValue);
+            paymentList.add(new Payment(paymentTypes[tempType], tempValueString));
         }
     }
     

@@ -6,9 +6,9 @@ package pkg412proj;
  */
 public class Payment {
     private String paymentType;
-    private double paymentValue;
+    private String paymentValue;
     
-    public Payment(String paymentType, double paymentValue){
+    public Payment(String paymentType, String paymentValue){
         this.paymentType = paymentType;
         this.paymentValue = paymentValue;
     }
@@ -17,7 +17,7 @@ public class Payment {
         return this.paymentType;
     }
     
-    public double getPaymentValue(){
+    public String getPaymentValue(){
         return this.paymentValue;
     }
 }
