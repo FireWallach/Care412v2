@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.181" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pkg412proj.PersonalUIController">
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pkg412proj.PersonalUIController">
    <children>
       <TableView fx:id="tableView" layoutX="77.0" layoutY="61.0" prefHeight="246.0" prefWidth="470.0">
         <columns>
@@ -21,7 +21,7 @@
          </font>
       </Label>
       <Button fx:id="payButton" layoutX="291.0" layoutY="327.0" mnemonicParsing="false" onAction="#paymentButtonAction" text="Pay" />
-      <Button fx:id="payAllButton" layoutX="455.0" layoutY="327.0" mnemonicParsing="false" text="Pay All" />
+      <Button fx:id="payAllButton" layoutX="455.0" layoutY="327.0" mnemonicParsing="false" onAction="#payAllButtonAction" text="Pay All" />
       <Button fx:id="backButton" layoutX="99.0" layoutY="327.0" mnemonicParsing="false" onAction="#goHome" text="Back" />
    </children>
 </AnchorPane>

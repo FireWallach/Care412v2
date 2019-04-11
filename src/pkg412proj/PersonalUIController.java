@@ -89,6 +89,17 @@ public class PersonalUIController implements Initializable {
             
         }
     }
+    
+    public void payAllButtonAction(ActionEvent ae){
+        try{
+            tableView.getItems().clear();
+            observablePaymentList.clear();
+            payments.clear();
+            paymentList.getPaymentList().clear();
+        }catch (Error e){
+            
+        }
+    }
    
     public void enableEditing(){
         //TODO: Write logic to edit personal information.
