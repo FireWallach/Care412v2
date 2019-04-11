@@ -30,9 +30,6 @@ import javafx.stage.Stage;
 
 public class NavUIController implements Initializable {
     
-    //Three FXML manipulation elements
-    @FXML
-    private Scene scene; 
     private Stage stage;
     private Parent root;
     
@@ -40,6 +37,8 @@ public class NavUIController implements Initializable {
     private Button personalbutton; //refers to the button for navigation to the personal page
     @FXML
     private Button medicalbutton; // refers to the button for navigation to the medical page
+    @FXML
+    private Button logoutButton;
     
 
     /**
