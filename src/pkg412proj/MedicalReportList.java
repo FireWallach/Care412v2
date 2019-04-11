@@ -63,10 +63,6 @@ public class MedicalReportList {
         return list.size();
     }
     
-    public static ArrayList<MedicalReport> getList(){
-        verifyInitialized();
-        return list;
-    }
 
     /**
      * @return the selected
