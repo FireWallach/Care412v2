@@ -37,7 +37,7 @@ public class PersonalUIController implements Initializable {
     private User user; //The logged in user
     private Stage stage;
     private Parent root;
-    private ArrayList<Payment> payments; //Holds the reports
+    //private ArrayList<Payment> payments = PaymentList.getPaymentListCntl().getPaymentList(); //Holds the payments
     private ObservableList<Payment> observablePaymentList;
     @FXML
     private Button backButton; //Refers to the back button in the view
@@ -51,7 +51,7 @@ public class PersonalUIController implements Initializable {
     private TableColumn<Payment, String> paymentColumn;
     @FXML
     private TableColumn<Payment, String> costColumn;
-    private PaymentList paymentList = PaymentList.getPaymentListCntl();
+    
 
     /**
      * Initializes the controller class.
@@ -59,14 +59,13 @@ public class PersonalUIController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         
-        payments = paymentList.getPaymentList();
         if (observablePaymentList == null) {
             observablePaymentList = FXCollections.observableArrayList();
         }
         observablePaymentList.clear();
 
-        for (int i = 0; i < payments.size(); i++) {
-            this.observablePaymentList.add(payments.get(i));
+        for (int i = 0; i < PaymentList.getPaymentListCntl().getPaymentList().size(); i++) {
+            this.observablePaymentList.add(PaymentList.getPaymentListCntl().getPaymentList().get(i));
         }
         paymentColumn.setCellValueFactory(new PropertyValueFactory<Payment, String>("paymentType"));
         costColumn.setCellValueFactory(new PropertyValueFactory<Payment, String>("paymentValue"));
@@ -82,8 +81,7 @@ public class PersonalUIController implements Initializable {
             int paymentIndex = tableView.getSelectionModel().getSelectedIndex();
             if(paymentIndex != -1){
                 observablePaymentList.remove(paymentIndex);
-                payments.remove(paymentIndex);
-                paymentList.getPaymentList().remove(paymentIndex);
+                PaymentList.getPaymentListCntl().getPaymentList().remove(paymentIndex);
             }
         } catch(Error e){
             
@@ -94,16 +92,12 @@ public class PersonalUIController implements Initializable {
         try{
             tableView.getItems().clear();
             observablePaymentList.clear();
-            payments.clear();
-            paymentList.getPaymentList().clear();
+            PaymentList.getPaymentListCntl().getPaymentList().clear();
         }catch (Error e){
             
         }
     }
    
-    public void enableEditing(){
-        //TODO: Write logic to edit personal information.
-    }
 
     /**
      * @return the user
