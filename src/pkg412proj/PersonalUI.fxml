@@ -22,5 +22,5 @@
          <Text layoutX="176.0" layoutY="253.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Occupation:" />
       </children>
    </Pane>
-</children>  
+</children>
 </AnchorPane>
