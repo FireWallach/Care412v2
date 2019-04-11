@@ -7,20 +7,6 @@
 <?import javafx.scene.layout.*?>
 
 <AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pkg412proj.PersonalUIController">
-  <children>
-   <Pane prefHeight="400.0" prefWidth="600.0">
-      <children>
-         <Text layoutX="224.0" layoutY="66.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Your Profile">
-            <font>
-               <Font name="Avenir Roman" size="24.0" />
-            </font>
-         </Text>
-         <Button layoutX="46.0" layoutY="45.0" mnemonicParsing="false" text="Back" />
-         <Button layoutX="484.0" layoutY="315.0" mnemonicParsing="false" text="Edit" />
-         <Text layoutX="176.0" layoutY="135.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name:" />
-         <Text layoutX="176.0" layoutY="196.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Age:" />
-         <Text layoutX="176.0" layoutY="253.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Occupation:" />
-      </children>
-   </Pane>
-</children>
+  
+
 </AnchorPane>
