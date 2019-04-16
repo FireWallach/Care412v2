@@ -19,19 +19,14 @@
       </font>
     </Label>
     <Button id="exitProgram" fx:id="logoutButton" layoutX="14.0" layoutY="361.0" mnemonicParsing="false" onAction="#exitProgram" prefHeight="25.0" style="#glass-grey {&#10;    -fx-background-color: &#10;        #c3c4c4,&#10;        linear-gradient(#d6d6d6 50%, white 100%),&#10;        radial-gradient(center 50% -40%, radius 200%, #e6e6e6 45%, rgba(230,230,230,0) 50%);&#10;    -fx-background-radius: 30;&#10;    -fx-background-insets: 0,1,1;&#10;    -fx-text-fill: red;&#10;    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 3, 0.0 , 0 , 1 );&#10;}" text="Logout" textFill="#ff2929" />
-    <Label layoutX="193.0" layoutY="309.0" text="Health Care and Good Times" textFill="#549be8">
+    <Label layoutX="197.0" layoutY="79.0" text="Health Care and Good Times" textFill="#549be8">
       <font>
         <Font name="Verdana Bold Italic" size="12.0" />
       </font>
     </Label>
-      <Button fx:id="medicalbutton" layoutX="25.0" layoutY="99.0" mnemonicParsing="false" onAction="#showMedicalPage" text="View Lab Results" />
-      <Button fx:id="personalbutton" layoutX="14.0" layoutY="235.0" mnemonicParsing="false" onAction="#showPersonalPage" text="View Payment Information" />
-      <Button fx:id="recordButton" layoutX="422.0" layoutY="113.0" mnemonicParsing="false" onAction="#openMedicalRecordUI" text="Medical Record" />
-      <Button fx:id="prescriptionButton" layoutX="384.0" layoutY="235.0" mnemonicParsing="false" onAction="#showPrescriptionPage" text="View Prescription information" />
-      <ImageView fitHeight="162.0" fitWidth="165.0" layoutX="207.0" layoutY="113.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../../../../Desktop/doctor-background-design_1270-62.jpg" />
-         </image>
-      </ImageView>
+      <Button fx:id="medicalbutton" layoutX="64.0" layoutY="113.0" mnemonicParsing="false" onAction="#showMedicalPage" text="View Lab Results" />
+      <Button fx:id="personalbutton" layoutX="30.0" layoutY="222.0" mnemonicParsing="false" onAction="#showPersonalPage" text="View Payment Information" />
+      <Button fx:id="recordButton" layoutX="361.0" layoutY="119.0" mnemonicParsing="false" onAction="#openMedicalRecordUI" text="View Medical Record" />
+      <Button fx:id="prescriptionButton" layoutX="361.0" layoutY="222.0" mnemonicParsing="false" onAction="#showPrescriptionPage" text="View Prescription information" />
   </children>
 </AnchorPane>
