@@ -23,7 +23,7 @@
             <Font name="Verdana" size="14.0" fx:id="x3" />
           </font>
         </Button>
-        <Label alignment="CENTER" contentDisplay="CENTER" layoutX="196.0" layoutY="16.0" prefHeight="79.9609375" prefWidth="208.0" text="Care412" textAlignment="CENTER">
+        <Label alignment="CENTER" contentDisplay="CENTER" layoutX="188.0" layoutY="25.0" prefHeight="79.9609375" prefWidth="208.0" text="AlphaCare" textAlignment="CENTER" textFill="#73a8e4">
           <font>
             <Font name="Georgia" size="32.0" />
           </font>
