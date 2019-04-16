@@ -15,11 +15,11 @@
       </Text>
       <Text layoutX="177.0" layoutY="113.0" strokeType="OUTSIDE" strokeWidth="0.0" text="First Name:" />
       <Text fx:id="fNameLabel" layoutX="366.0" layoutY="113.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ERROR" />
-      <Text fx:id="lNameLabel" layoutX="366.0" layoutY="151.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ERROR" />
-      <Text layoutX="177.0" layoutY="150.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Last Name:" />
-      <Text layoutX="170.0" layoutY="220.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Past Doctors:" />
-      <Text layoutX="167.0" layoutY="186.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Past Diseases:" />
-      <Text fx:id="diseasesLabel" layoutX="366.0" layoutY="186.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ERROR" />
-      <Text fx:id="doctorsLabel" layoutX="366.0" layoutY="220.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ERROR" />
+      <Text fx:id="lNameLabel" layoutX="366.0" layoutY="158.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ERROR" />
+      <Text layoutX="177.0" layoutY="157.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Last Name:" />
+      <Text layoutX="170.0" layoutY="250.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Past Doctors:" />
+      <Text layoutX="167.0" layoutY="197.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Past Diseases:" />
+      <Text fx:id="diseasesLabel" layoutX="366.0" layoutY="197.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ERROR" />
+      <Text fx:id="doctorsLabel" layoutX="366.0" layoutY="250.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ERROR" />
    </children>
 </AnchorPane>

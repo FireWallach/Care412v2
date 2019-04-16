@@ -56,6 +56,13 @@ public class RecordUIController implements Initializable {
                 sb.append(", \n");
         }
         diseasesLabel.setText(sb.toString());
+        sb.setLength(0);
+        for(int i = 0; i < MedicalRecord.getInstance().getNoDoctors(); i++){
+            sb.append(MedicalRecord.getInstance().getDoctors()[i]);
+            if(i != MedicalRecord.getInstance().getNoDoctors() - 1)
+                sb.append(", \n");
+        }
+        doctorsLabel.setText(sb.toString());
     }    
 
     @FXML
