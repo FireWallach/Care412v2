@@ -39,6 +39,8 @@ public class NavUIController implements Initializable {
     private Button medicalbutton; // refers to the button for navigation to the medical page
     @FXML
     private Button logoutButton;
+    @FXML
+    private Button recordButton;
     
 
     /**
@@ -83,6 +85,23 @@ public class NavUIController implements Initializable {
         URL url = null;
         try {
             url = new File("src/pkg412proj/PersonalUI.fxml").toURI().toURL();
+        } catch (MalformedURLException ex) {
+            Logger.getLogger(NavUIController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        stage = (Stage)personalbutton.getScene().getWindow();
+        try{
+            root = FXMLLoader.load(url);
+        } catch(IOException ex){
+        }
+        NavigationManager.getInstance(stage).showScene(root);
+    }
+
+    @FXML
+    private void openMedicalRecordUI(ActionEvent event) {
+        URL url = null;
+        try {
+            url = new File("src/pkg412proj/RecordUI.fxml").toURI().toURL();
         } catch (MalformedURLException ex) {
             Logger.getLogger(NavUIController.class.getName()).log(Level.SEVERE, null, ex);
         }
