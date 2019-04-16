@@ -21,3 +21,8 @@ This can be done by selecting "View Payment Information" from the navigation men
 using the login credentials listed above. The UI will then display a table with the current Payments Due. If the user then selects
 a payment item and then selects "Pay", the payment will be paid out and dismissed from the UI. If the user presses "Pay All" at any point,
 the currently outstanding payments will be paid and dismissed from the UI. These payments are maintained upon navigation away. 
+
+M05-A02 instructions for grader: The implemented use cases for this assignment are "View Prescription Information" and "View Medical
+Record." This can be done by selecting the buttons in the navigation menu that have the same labels as the aforementioned use cases, after
+logging in using the information at the beginning of this document. After selecting either button, the UI for that respective use case
+will be displayed. Both use cases include a TableView which is populated with the relevant information from the user.
